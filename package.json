@@ -1,0 +1,14 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "yarn serve",
+        "prod": "yarn build",
+        "serve": "cd frontend && quasar dev",
+        "build": "cd frontend && quasar build -m pwa && cd .. && yarn development",
+        "start": "yarn install && cd frontend && yarn install",
+        "development": "mix"
+    },
+    "devDependencies": {
+        "laravel-mix": "^6.0.6"
+    }
+}

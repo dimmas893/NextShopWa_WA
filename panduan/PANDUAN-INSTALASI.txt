@@ -1,0 +1,86 @@
+
+/** PANDUAN INSTALASI DAN KONFIGURASI**/
+
+
+1. Siapkan domain / subdomain
+
+
+2. Upload File
+
+   a. Upload semua file di dalam folder "Application" ke direktory hosting anda.
+   b. Arahkan domain anda ke folder public dari root direktori aplikasi, 
+     jika tidak memungkinkan untuk itu, silahkan tambahkan file .htaccess  pada root direktori dan paste kode berikut:
+
+ 	#StarT Redirect
+ 	
+	<IfModule mod_rewrite.c>
+
+	RewriteEngine On
+
+	RewriteRule ^(.*)$ public/$1 [L]
+
+	</IfModule>
+ 
+ 	#End Redirect
+ 	
+
+3. Siapkan Database
+
+   a. Buat database di hosting 
+   
+   b. Buat User dan password database
+ 
+   c. Assign / tambahkan user ke database diatas dan berikan semua PRIVILEGES ( ceklis ALL PRIVILEGE ).
+ 
+   d. Import file "database/database.sql" melalui phpmyadmin atau yg lainnya
+
+
+	
+4. Konfigurasi file .env [ direktori Application/.env ]
+	note: jika file .env tidak kelihatan, silahkan buka setting di file manager cpanel anda (pojok kanan atas) anda kemudian ceklis   	"view hidden file"
+
+   a. konfigurasi database di file.env sesuai dengan kredensial database anda
+	a. DB_DATABASE 		--> nama main database
+	b. DB_USERNAME			--> User Database
+	c. DB_PASSWORD			--> Password User database
+	
+   b. Konfigurasi "APP_URL" dengan alamat domain anda. contoh: "https://domainanda.com"
+   
+
+5. Buka url alamat domain anda, jika dapat terbuka dengan baik, berarti konfigursi hosting sudah benar
+
+
+6. Selesai
+
+
+berikut kredensial default anda, silahkan ganti dengan alamat email dan password anda via aplikasi frontend.
+
+email = admin@example.com
+password = password
+
+
+# Pengaturan PWA
+
+~ Buka folder Application/public kemudian edit file "manifest.json" 
+  a. name 		--> Nama aplikasi
+  b. short_name	--> Nama pendek aplikasi
+  c. description	--> Deskripsi aplikasi
+
+
+/** SMTP EMAIL **/
+
+Edit file .env dan sesuaikan pengaturan dibawah dengan mail server anda
+
+  a. MAIL_DRIVER=		--> Driver mail server, contoh: smtp
+  b. MAIL_HOST=		--> Host mail server, contoh: smtp@example.com
+  c. MAIL_PORT=		--> Port mail server, contoh: 465/578
+  d. MAIL_USERNAME=		--> Mail username / email anda, contoh: email@example.com
+  e. MAIL_PASSWORD=		--> Mail Password / Password email anda
+  f. MAIL_ENCRYPTION=ssl	--> Tipe enkripsi, contoh: ssl/tls
+  g. MAIL_FROM_ADDRESS=	--> Email pengirim, contoh: email@example.com
+
+
+	
+
+	
+

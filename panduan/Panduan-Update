@@ -1,0 +1,27 @@
+
+#update patch 
+- Fix [BUG] loadmore / pagination product page
+
+
+#Panduan Update
+
+Replace semua file atau folder kecuali yang di bawah ini
+
+1. [file] 	.env
+2. [file] 	public/manifest.json
+2. [folder] 	public/icon
+3. [folder] 	public/upload/images
+
+setelah di replace kemudian masuk ke aplikasi -> pengaturan 
+
+- update aplikasi dengan menekan tombol UPDATE NOW
+- clear cache dengan menekan tombol CLEAR CACHE
+
+
+
+
+
+
+
+
+
